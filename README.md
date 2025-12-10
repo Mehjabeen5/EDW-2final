@@ -140,16 +140,16 @@ README.md
 	1.	User submits a business question
 	2.	Router classifies it as simple or reasoning
 	3.	If reasoning:
-	•	LLM generates sub-questions
-	•	LLM generates a multi-step JSON plan
+        •	LLM generates sub-questions
+        •	LLM generates a multi-step JSON plan
 	4.	Executor runs analytics views based on the plan
 	5.	Evidence is packaged into structured JSON
 	6.	Synthesizer calls Cortex to generate the final narrative explanation
 	7.	UI displays:
-	•	sub-questions
-	•	plan
-	•	evidence previews
-	•	final explanation
+        •	sub-questions
+        •	plan
+        •	evidence previews
+        •	final explanation
 
 ⸻
 
@@ -213,16 +213,16 @@ Running sql/setup_revenue_data.sql will create:
 	•	A schema: REASONING
 	•	A base fact table: REVENUE_TABLE
 	•	Four core attributes per row:
-	•	QUARTER
-	•	REGION
-	•	PRODUCT
-	•	REVENUE
-	•	COST
+        •	QUARTER
+        •	REGION
+        •	PRODUCT
+        •	REVENUE
+        •	COST
 	•	The 16-row Honeywell-style sample dataset used in this project
 	•	Three analytics views used by the Streamlit app:
-	•	V_REVENUE_BY_QUARTER
-	•	V_REVENUE_BY_REGION
-	•	V_REVENUE_BY_PRODUCT
+        •	V_REVENUE_BY_QUARTER
+        •	V_REVENUE_BY_REGION
+        •	V_REVENUE_BY_PRODUCT
 
 These are the exact structures that fetch_views() expects inside the application. If a contributor’s Snowflake environment does not contain these objects, the Streamlit app will not be able to function.
 
@@ -233,7 +233,6 @@ How to Run It
 	4.	Run the entire script
 
 Within seconds, the database is deployed and ready for the EDW-2 Streamlit app.
-
 
 This SQL script ensures:
 	•	Every team member works from the same consistent dataset
