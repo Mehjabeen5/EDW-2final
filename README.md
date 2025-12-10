@@ -202,6 +202,47 @@ The EDW-2 Reasoning Assistant now:
 
 ⸻
 
+# 📦 Database & Data Setup (Snowflake)
+
+This project includes a complete Snowflake SQL setup script that creates all required objects for the EDW-2 Reasoning Assistant. This removes guesswork for contributors and ensures that everyone works from the same canonical dataset.
+
+What the Setup Script Creates
+
+Running sql/setup_revenue_data.sql will create:
+	•	A Snowflake database: EDW_2_DB
+	•	A schema: REASONING
+	•	A base fact table: REVENUE_TABLE
+	•	Four core attributes per row:
+	•	QUARTER
+	•	REGION
+	•	PRODUCT
+	•	REVENUE
+	•	COST
+	•	The 16-row Honeywell-style sample dataset used in this project
+	•	Three analytics views used by the Streamlit app:
+	•	V_REVENUE_BY_QUARTER
+	•	V_REVENUE_BY_REGION
+	•	V_REVENUE_BY_PRODUCT
+
+These are the exact structures that fetch_views() expects inside the application. If a contributor’s Snowflake environment does not contain these objects, the Streamlit app will not be able to function.
+
+How to Run It
+	1.	Open Snowflake → Worksheets
+	2.	Select a warehouse (e.g., EDW_COMPUTE_WH)
+	3.	Open the file sql/setup_revenue_data.sql
+	4.	Run the entire script
+
+Within seconds, the database is deployed and ready for the EDW-2 Streamlit app.
+
+
+This SQL script ensures:
+	•	Every team member works from the same consistent dataset
+	•	The reasoning assistant behaves predictably across environments
+	•	No manual table creation or data loading is required
+	•	Snowflake-native analytics views align perfectly with the pipeline inside the app
+
+This also supports future extensions: contributors may swap out the mock data for live Honeywell EDW data simply by replacing REVENUE_TABLE.
+
 # 📥 Deployment Instructions
 
 Upload to Snowflake Git Integration
@@ -225,6 +266,8 @@ In Snowflake UI:
 The app will launch immediately.
 
 ⸻
+
+
 
 # 📄 License
 
