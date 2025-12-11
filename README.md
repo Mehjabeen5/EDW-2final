@@ -55,22 +55,22 @@ This ensures:
 
 The reasoning system includes four core agents:
 
-Router
+Router:
 Classifies the incoming question as:
 	•	simple → requires no planning
 	•	reasoning → requires multistep analysis
 
-Planner
+Planner:
 Uses Cortex LLM to generate:
 	•	sub-questions
 	•	a structured JSON reasoning plan tied to quarter/region/product analytics
 
-Executor
+Executor:
 Runs Snowflake analytics based on the plan:
 	•	fetches relevant SQL views
 	•	builds structured evidence objects
 
-Synthesizer
+Synthesizer:
 Calls Cortex again with:
 	•	the user question
 	•	the generated plan
