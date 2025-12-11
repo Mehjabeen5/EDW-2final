@@ -136,7 +136,7 @@ README.md
 
 ⸻
 
-# 🚀 How It Works (High-Level Workflow)
+# How It Works (High-Level Workflow)
 	1.	User submits a business question
 	2.	Router classifies it as simple or reasoning
 	3.	If reasoning:
