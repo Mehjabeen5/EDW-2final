@@ -44,7 +44,7 @@ The Streamlit app fetches view results using Snowpark:
 
     rev = session.sql("SELECT * FROM ...").to_pandas()
 
-This ensures:
+This ensures-
 	•	zero external compute
 	•	secure, in-warehouse execution
 	•	low-latency analysis
